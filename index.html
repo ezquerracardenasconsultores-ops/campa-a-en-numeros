@@ -1,0 +1,1027 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#b80017">
+<title>Impacto digital | Amílcar Díaz</title>
+
+<style>
+:root{
+ --rojo:#bd0018;
+ --vino:#79000e;
+ --azul:#17417c;
+ --verde:#16713c;
+ --tinta:#14243f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;
+ background:#f4f6fa;
+ color:var(--tinta);
+ font-family:Arial,Helvetica,sans-serif;
+}
+a{color:inherit}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.wrap{width:min(1180px,94%);margin:auto}
+.titulo{
+ font-family:Impact,"Arial Black",Arial,sans-serif;
+ font-style:italic;
+ font-weight:1000;
+ text-transform:uppercase;
+ line-height:.96;
+}
+.top{
+ background:#7b000e;
+ color:white;
+ padding:14px 0;
+ font-size:12px;
+ font-weight:900;
+}
+.top .wrap{
+ display:flex;
+ justify-content:space-between;
+ gap:12px;
+ flex-wrap:wrap;
+}
+.top a{
+ color:white;
+ text-decoration:none;
+ margin-left:15px;
+}
+.hero{
+ position:relative;
+ background:
+ radial-gradient(circle at 65% 20%,#fa465399,transparent 43%),
+ linear-gradient(125deg,#e20b23,#87000e);
+ color:white;
+ overflow:hidden;
+}
+.hero:before{
+ content:"";
+ position:absolute;
+ bottom:0;left:0;right:0;
+ height:45%;
+ background:#48000a88;
+ clip-path:polygon(
+  0 72%,15% 43%,30% 78%,45% 30%,
+  62% 72%,80% 40%,100% 69%,
+  100% 100%,0 100%
+ );
+}
+.hero .wrap{
+ position:relative;
+ display:grid;
+ grid-template-columns:40% 60%;
+ align-items:end;
+ min-height:550px;
+}
+.hero-photo{
+ position:relative;
+ height:520px;
+ display:flex;
+ align-items:end;
+ justify-content:center;
+}
+.hero-photo img{
+ width:100%;
+ max-width:470px;
+ height:500px;
+ object-fit:cover;
+ border-radius:28px 28px 0 0;
+ box-shadow:0 8px 30px #38000866;
+}
+.firma{
+ position:absolute;
+ bottom:18px;
+ left:5%;
+ right:5%;
+ background:white;
+ color:#163e78;
+ padding:12px;
+ text-align:center;
+ border-radius:12px;
+ transform:rotate(-3deg);
+ font:bold italic clamp(20px,3vw,36px) Georgia,serif;
+ box-shadow:0 8px 20px #42000888;
+}
+.firma span{color:#cf0025}
+.hero-copy{padding:45px 20px}
+.eyebrow{
+ font-size:14px;
+ font-weight:900;
+ letter-spacing:.12em;
+}
+.hero h1{
+ margin:15px 0 25px;
+ font-size:clamp(55px,7.5vw,105px);
+ text-shadow:0 5px 2px #500008;
+}
+.hero h1 small{
+ display:block;
+ font-size:.46em;
+}
+.hero p{
+ font-size:19px;
+ line-height:1.5;
+ font-weight:800;
+}
+.score{
+ display:block;
+ width:max-content;
+ max-width:100%;
+ background:white;
+ color:#bd001c;
+ padding:15px 23px;
+ border-top:7px solid #ffe583;
+ border-radius:19px;
+ text-decoration:none;
+ box-shadow:0 10px 24px #36000a77;
+ transition:transform .2s;
+}
+.score:hover{transform:translateY(-4px)}
+.score strong{
+ display:block;
+ font-size:clamp(48px,7vw,93px);
+ letter-spacing:-.055em;
+}
+.score span{
+ display:block;
+ color:#173e78;
+ font-weight:900;
+ font-size:17px;
+}
+.score small{
+ display:block;
+ margin-top:8px;
+ color:#617085;
+ font-size:12px;
+ font-weight:800;
+}
+.buttons{
+ display:flex;
+ gap:10px;
+ flex-wrap:wrap;
+ margin-top:18px;
+}
+.buttons a{
+ display:inline-block;
+ background:white;
+ color:#a30016;
+ padding:12px 15px;
+ border-radius:10px;
+ font-weight:900;
+ text-decoration:none;
+}
+.buttons .outline{
+ background:transparent;
+ border:2px solid white;
+ color:white;
+}
+section.bloque{padding:45px 0}
+.white{background:white}
+h2{
+ font-size:clamp(32px,4vw,53px);
+ color:#b80019;
+ margin:0 0 12px;
+}
+.sub{
+ color:#657185;
+ line-height:1.7;
+}
+.metrics{
+ display:flex;
+ align-items:center;
+ gap:18px;
+ flex-wrap:wrap;
+ padding:21px;
+ background:#eaf1fa;
+ border:1px solid #dbe3ee;
+ border-radius:18px;
+ margin:22px 0;
+}
+.fb-icon{
+ background:#1766cb;
+ width:72px;
+ height:72px;
+ border-radius:16px;
+ color:white;
+ display:grid;
+ place-items:center;
+ font:bold 64px Arial;
+}
+.metrics strong{
+ display:block;
+ font-size:clamp(34px,5vw,62px);
+ color:#ba001c;
+}
+.metrics span{
+ color:#16417a;
+ font-weight:900;
+}
+.rivalrow{
+ display:flex;
+ justify-content:flex-end;
+}
+.rival{
+ width:245px;
+ max-width:100%;
+ padding:13px;
+ background:#f8f9fc;
+ border:1px solid #dbe2ec;
+ border-radius:15px;
+ text-decoration:none;
+ box-shadow:0 5px 15px #27374519;
+}
+.rhead{
+ display:flex;
+ align-items:center;
+ gap:10px;
+}
+.rival img{
+ width:58px;
+ height:58px;
+ border-radius:50%;
+ object-fit:cover;
+}
+.rival b{
+ font-size:12px;
+ line-height:1.3;
+}
+.rival strong{
+ display:block;
+ font-size:34px;
+ color:#14713c;
+ margin-top:9px;
+}
+.rival small{
+ color:#5b6b7d;
+ font-size:10px;
+ font-weight:900;
+}
+.cards{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:17px;
+ margin-top:23px;
+}
+.card{
+ display:flex;
+ flex-direction:column;
+ background:white;
+ border:1px solid #dfe6ed;
+ border-radius:19px;
+ overflow:hidden;
+ text-decoration:none;
+ box-shadow:0 8px 23px #1429441b;
+ transition:transform .2s;
+}
+.card:hover{transform:translateY(-5px)}
+.thumb{
+ height:225px;
+ position:relative;
+ background:#d3dae4;
+ overflow:hidden;
+}
+.thumb img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ display:block;
+}
+.play{
+ position:absolute;
+ left:12px;
+ bottom:12px;
+ width:54px;
+ height:54px;
+ border:3px solid white;
+ border-radius:50%;
+ background:#e00021;
+ color:white;
+ display:grid;
+ place-items:center;
+ font-size:23px;
+}
+.rank{
+ position:absolute;
+ right:11px;
+ top:11px;
+ background:#ab0017;
+ color:white;
+ border-radius:8px;
+ padding:8px 10px;
+ font-size:11px;
+ font-weight:900;
+}
+.body{padding:19px;flex:1}
+.label{
+ font-size:12px;
+ color:#164179;
+ font-weight:900;
+}
+.number{
+ font-size:clamp(42px,5vw,63px);
+ color:#bd001a;
+ font-weight:1000;
+ letter-spacing:-.05em;
+ margin-top:8px;
+}
+.unit{font-size:14px;font-weight:900}
+.details{
+ border-top:1px solid #e2e7ed;
+ padding-top:13px;
+ margin-top:13px;
+ font-size:13px;
+ line-height:1.7;
+ color:#53667d;
+}
+.note{
+ background:#e8eff9;
+ border-radius:12px;
+ padding:16px;
+ color:#173f79;
+ line-height:1.65;
+ font-size:13px;
+ font-weight:800;
+ margin-top:20px;
+}
+.switcher{
+ display:flex;
+ flex-wrap:wrap;
+ gap:8px;
+ margin:20px 0;
+}
+.switcher button{
+ border:1px solid #c7d0db;
+ background:#fff;
+ color:#283e5e;
+ border-radius:9px;
+ padding:12px 15px;
+ font-weight:900;
+}
+.switcher button.active{
+ background:#ae001a;
+ border-color:#ae001a;
+ color:white;
+}
+.filters{
+ display:grid;
+ grid-template-columns:1fr 180px 190px;
+ gap:9px;
+}
+.filters input,.filters select{
+ padding:12px;
+ border:1px solid #c9d2dc;
+ border-radius:8px;
+ color:#18314e;
+ background:white;
+ width:100%;
+ min-width:0;
+}
+.tablewrap{
+ overflow:auto;
+ border-radius:12px;
+ border:1px solid #dfe5ec;
+ background:white;
+}
+.tbl{
+ border-collapse:collapse;
+ min-width:860px;
+ width:100%;
+ font-size:13px;
+}
+.tbl th{
+ padding:12px;
+ background:#173f79;
+ color:white;
+ text-align:left;
+}
+.tbl td{
+ padding:11px;
+ border-bottom:1px solid #e2e7ed;
+}
+.tbl a{
+ color:#14538d;
+ font-weight:900;
+}
+.count{
+ font-size:13px;
+ font-weight:800;
+ color:#657184;
+}
+.download{
+ padding:13px 17px;
+ border:0;
+ border-radius:9px;
+ background:#174178;
+ color:white;
+ font-weight:900;
+ margin-top:16px;
+}
+.foot{
+ background:#80000d;
+ color:white;
+ text-align:center;
+ padding:25px;
+ line-height:1.7;
+ font-size:12px;
+}
+@media(max-width:850px){
+ .hero .wrap{grid-template-columns:1fr}
+ .hero-copy{grid-row:1;padding:40px 8px 25px}
+ .hero-photo{grid-row:2;height:360px}
+ .hero-photo img{height:350px;max-width:400px}
+ .cards{grid-template-columns:1fr 1fr}
+ .filters{grid-template-columns:1fr 1fr}
+ .filters input{grid-column:span 2}
+}
+@media(max-width:560px){
+ .cards{grid-template-columns:1fr}
+ .filters{grid-template-columns:1fr}
+ .filters input{grid-column:auto}
+ .hero h1{font-size:clamp(47px,13vw,67px)}
+ .hero p{font-size:16px}
+ .score strong{font-size:55px}
+ .rival{width:210px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="top">
+ <div class="wrap">
+  <span>IMPACTO DIGITAL · AMAZONAS · NOVIEMBRE 2026</span>
+  <nav>
+   <a href="#facebook">FACEBOOK</a>
+   <a href="#virales">REELS DESTACADOS</a>
+   <a href="#datos">DATOS</a>
+  </nav>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="wrap">
+
+  <div class="hero-photo">
+   <img id="fotoA" alt="Fotografía de Amílcar Díaz">
+   <div class="firma">
+    <span>Amílcar</span> Díaz ♥ Somos Perú
+   </div>
+  </div>
+
+  <div class="hero-copy">
+
+   <div class="eyebrow">
+    PUBLICACIONES DE AMÍLCAR DÍAZ
+   </div>
+
+   <h1 class="titulo">
+    <small>NUESTRO FUERTE</small>
+    FACEBOOK
+   </h1>
+
+   <p>
+    Videos destacados de Amílcar y sus estadísticas,
+    con acceso directo a cada publicación.
+   </p>
+
+   <a href="#datos" class="score"
+      onclick="abrirDatos('TT')">
+    <strong>132.594</strong>
+    <span>REPRODUCCIONES REGISTRADAS EN CAPTURAS DE TIKTOK</span>
+    <small>TOCA PARA CONSULTAR LAS PUBLICACIONES Y SUS DATOS ↗</small>
+   </a>
+
+   <div class="buttons">
+    <a href="#virales">▶ VER REELS DESTACADOS</a>
+    <a href="#datos" class="outline"
+       onclick="abrirDatos('FB')">
+     CONSULTAR FACEBOOK
+    </a>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+<section class="bloque white" id="facebook">
+ <div class="wrap">
+
+  <h2 class="titulo">FACEBOOK EN NÚMEROS</h2>
+
+  <p class="sub">
+   Interacciones de las publicaciones y enlaces
+   a sus Reels originales.
+  </p>
+
+  <div class="metrics">
+   <div class="fb-icon">f</div>
+   <div>
+    <span>AMÍLCAR DÍAZ · SOMOS PERÚ</span>
+    <strong>3.060 INTERACCIONES</strong>
+    <span>10 PUBLICACIONES · 8 REELS</span>
+   </div>
+  </div>
+
+  <div class="rivalrow">
+   <a href="#datos" class="rival"
+      onclick="abrirSegundo()">
+
+    <div class="rhead">
+     <img id="fotoS" alt="Segundo Hernández">
+     <b>SEGUNDO HERNÁNDEZ<br>«CARIÑITO»</b>
+    </div>
+
+    <strong>49.208</strong>
+    <small>REPRODUCCIONES DE REELS EN FACEBOOK</small>
+
+   </a>
+  </div>
+
+ </div>
+</section>
+
+<section class="bloque" id="virales">
+ <div class="wrap">
+
+  <h2 class="titulo">¡LO MÁS VIRAL!</h2>
+
+  <p class="sub">
+   Los tres Reels con más reproducciones de Amílcar.
+   Pulsa una tarjeta para abrir el video completo.
+  </p>
+
+  <div class="cards">
+
+   <a class="card"
+      href="https://www.facebook.com/reel/1133280286087793/"
+      target="_blank" rel="noopener">
+
+    <div class="thumb">
+     <img id="mini1" alt="Reel más visto de Amílcar">
+     <span class="play">▶</span>
+     <span class="rank">N.º 1</span>
+    </div>
+
+    <div class="body">
+     <div class="label">MÁS VISTO Y MÁS COMENTADO</div>
+     <div class="number">22.541</div>
+     <div class="unit">REPRODUCCIONES</div>
+     <div class="details">
+      262 me gusta · <b>254 comentarios</b> ·
+      53 compartidos
+      <br>
+      <b>▶ ABRIR REEL ORIGINAL</b>
+     </div>
+    </div>
+   </a>
+
+   <a class="card"
+      href="https://www.facebook.com/reel/2497001907773278/"
+      target="_blank" rel="noopener">
+
+    <div class="thumb">
+     <img id="mini2" alt="Reel con más interacciones">
+     <span class="play">▶</span>
+     <span class="rank">N.º 2</span>
+    </div>
+
+    <div class="body">
+     <div class="label">MAYOR NÚMERO DE INTERACCIONES</div>
+     <div class="number">15.068</div>
+     <div class="unit">REPRODUCCIONES</div>
+     <div class="details">
+      586 me gusta · 124 comentarios ·
+      39 compartidos
+      <br>
+      <b>749 INTERACCIONES · ▶ ABRIR REEL</b>
+     </div>
+    </div>
+   </a>
+
+   <a class="card"
+      href="https://www.facebook.com/reel/29477536111938025/"
+      target="_blank" rel="noopener">
+
+    <div class="thumb">
+     <img id="mini3" alt="Tercer Reel más visto">
+     <span class="play">▶</span>
+     <span class="rank">N.º 3</span>
+    </div>
+
+    <div class="body">
+     <div class="label">TERCER REEL MÁS VISTO</div>
+     <div class="number">7.763</div>
+     <div class="unit">REPRODUCCIONES</div>
+     <div class="details">
+      Reel del 23 de noviembre.
+      <br>
+      <b>▶ ABRIR REEL ORIGINAL</b>
+     </div>
+    </div>
+   </a>
+
+  </div>
+
+  <div class="note">
+   Cada tarjeta permite abrir la publicación
+   original de Facebook y consultar su contenido.
+  </div>
+
+ </div>
+</section>
+
+<section class="bloque white" id="datos">
+ <div class="wrap">
+
+  <h2 class="titulo">
+   DATOS PUBLICACIÓN POR PUBLICACIÓN
+  </h2>
+
+  <p class="sub">
+   Consulta reproducciones, comentarios, reacciones,
+   compartidos y enlaces originales.
+  </p>
+
+  <div class="switcher">
+   <button id="tabFB" class="active"
+    onclick="abrirDatos('FB')">FACEBOOK</button>
+
+   <button id="tabTT"
+    onclick="abrirDatos('TT')">TIKTOK OFICIAL</button>
+
+   <button id="tabOT"
+    onclick="abrirDatos('OT')">OTRAS CUENTAS</button>
+
+   <button id="tabALL"
+    onclick="abrirDatos('ALL')">TODOS</button>
+  </div>
+
+  <div class="filters">
+
+   <input id="search"
+    placeholder="Buscar fecha, candidato o video"
+    oninput="render()">
+
+   <select id="candidate" onchange="render()">
+    <option value="A">Amílcar Díaz</option>
+    <option value="C">Segundo Hernández</option>
+    <option value="*">Ambos candidatos</option>
+   </select>
+
+   <select id="order" onchange="render()">
+    <option value="views">Más reproducciones</option>
+    <option value="comments">Más comentarios</option>
+    <option value="interactions">Más interacciones</option>
+    <option value="date">Más recientes</option>
+   </select>
+
+  </div>
+
+  <p class="count" id="count"></p>
+
+  <div class="tablewrap">
+   <table class="tbl">
+    <thead>
+     <tr>
+      <th>Fecha</th>
+      <th>Candidato</th>
+      <th>Red</th>
+      <th>Contenido</th>
+      <th>Vistas</th>
+      <th>Me gusta</th>
+      <th>Comentarios</th>
+      <th>Compartidos</th>
+      <th>Enlace</th>
+     </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+   </table>
+  </div>
+
+  <button class="download" onclick="downloadCSV()">
+   ↓ DESCARGAR LOS 85 REGISTROS EN CSV
+  </button>
+
+ </div>
+</section>
+
+<footer class="foot">
+ IMPACTO DIGITAL · AMAZONAS · NOVIEMBRE 2026
+</footer>
+
+<script>
+/*
+ FOTOGRAFÍAS INTEGRADAS EN EL HTML.
+ Se utiliza una composición de imágenes del material
+ recibido, sin depender de Facebook para mostrarlas.
+*/
+
+const IMG = {
+ hero:"data:image/webp;base64,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",
+ segundo:"data:image/webp;base64,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",
+ reel2:"data:image/webp;base64,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",
+ reel3:"data:image/webp;base64,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"
+};
+
+document.getElementById("fotoA").src=IMG.hero;
+document.getElementById("fotoS").src=IMG.segundo;
+document.getElementById("mini1").src=IMG.hero;
+document.getElementById("mini2").src=IMG.reel2;
+document.getElementById("mini3").src=IMG.reel3;
+
+/*
+ DATOS DE LAS PUBLICACIONES
+ A: AMÍLCAR
+ C: CARIÑITO
+ FB: FACEBOOK
+ TT: TIKTOK
+ o: CUENTA OFICIAL
+ r: CUENTAS RELACIONADAS
+*/
+
+const BASE=`
+A|FB|o|11-18|6539|92|45|10|1651551783124397
+A|FB|o|11-17||208|37|27|P1
+A|FB|o|11-17|3017|161|24|24|1502807304993800
+A|FB|o|11-17|22541|262|254|53|1133280286087793
+A|FB|o|11-17|7663|266|48|31|1516251343672120
+A|FB|o|11-24|2469|124|12|12|1749904089409438
+A|FB|o|11-23|7763|305|67|15|29477536111938025
+A|FB|o|11-23|15068|586|124|39|2497001907773278
+A|FB|o|11-23|2295|103|16|14|1463411565286151
+A|FB|o|11-23||78|17|6|P9
+C|FB|o|11-18|670|74|26|8|2672486846512990
+C|FB|o|11-17|19595|186|48|57|2691048311407292
+C|FB|o|11-17|1575|116|27|8|1479607764101261
+C|FB|o|11-17||69|17|3|P13
+C|FB|o|11-17||62|20|2|P14
+C|FB|o|11-19|4990|215|37|36|4463113480570118
+C|FB|o|11-19||87|16|9|P16
+C|FB|o|11-19|22378|461|119|40|1929356021365037
+C|FB|o|11-19||109|38|12|P18
+C|FB|o|11-19||47|27|3|P19
+A|TT|o|11-18|229|10|0|0|amilcardiazoficial@7709600430933740801
+A|TT|o|11-18|423|48|1|0|amilcardiazoficial@7709588000673402130
+A|TT|o|11-18|490|73|3|0|amilcardiazoficial@7709577649596714241
+A|TT|o|11-18|2120|65|11|6|amilcardiazoficial@7709527477642693889
+A|TT|o|11-18|3328|61|10|8|amilcardiazoficial@7709520020841286920
+A|TT|o|11-17|1046|30|1|1|amilcardiazoficial@7709289760354864385
+A|TT|o|11-17|366|24|1|1|amilcardiazoficial@7709287656571604225
+A|TT|o|11-17|647|60|3|2|amilcardiazoficial@7709172882353425671
+A|TT|o|11-17|6047|135|22|25|amilcardiazoficial@7709132070991301896
+A|TT|o|11-16|1197|136|6|5|amilcardiazoficial@7708777651632213300
+A|TT|o|11-16|15000|438|48|28|amilcardiazoficial@7708564440949525766
+A|TT|o|11-15|1722|107|10|3|amilcardiazoficial@7708436516678618369
+A|TT|o|11-15|8633|414|18|17|amilcardiazoficial@7708449286312185109
+A|TT|o|11-15|8924|172|34|8|amilcardiazoficial@7708434469845257524
+A|TT|o|11-14|1684|115|4|3|amilcardiazoficial@7707803928619928833
+C|TT|o|11-18|2068|137|17|26|cariito.gob.regio@7709573529531862290
+C|TT|o|11-18|1976|199|12|15|cariito.gob.regio@7709311440208809234
+C|TT|o|11-17|1661|151|8|14|cariito.gob.regio@7709189214885235976
+C|TT|o|11-16|12100|400|11|28|cariito.gob.regio@7708844412813511937
+C|TT|o|11-15|7654|399|20|20|cariito.gob.regio@7708517459300470034
+C|TT|o|11-15|1625|130|4|13|cariito.gob.regio@7708246374810160391
+C|TT|o|11-14|1810|97|8|9|cariito.gob.regio@7708173798821940487
+C|TT|o|11-14|30600|1273|103|158|cariito.gob.regio@7708112364503174407
+C|TT|o|11-13|1884|116|6|20|cariito.gob.regio@7707690243104738568
+C|TT|o|11-13|5974|296|31|36|cariito.gob.regio@7707501812269468980
+C|TT|o|11-12|908|42|3|18|cariito.gob.regio@7707303647654317319
+C|TT|o|11-11|3685|182|9|24|cariito.gob.regio@7706738724410772743
+C|TT|o|11-10|19100|747|31|37|cariito.gob.regio@7706617324714937607
+C|TT|o|11-07|13500|655|28|42|cariito.gob.regio@7705448655955758354
+C|TT|o|11-07|17200|866|54|58|cariito.gob.regio@7705419576648928518
+C|TT|o|11-23|995|33|1|17|cariito.gob.regio@7711471259778944274
+C|TT|o|11-23|1460|88|5|3|cariito.gob.regio@7711186655985667336
+C|TT|o|11-20|1309|81|6|12|cariito.gob.regio@7710326019932097799
+C|TT|o|11-19|1317|74|3|19|cariito.gob.regio@7710003831597305095
+C|TT|o|11-19|2638|251|19|32|cariito.gob.regio@7709683072945376533
+A|TT|r|11-21|1400|166|12|11|amilcarcorazon@7710598908245855508
+A|TT|r|11-18|574|58|3|2|team_amilcardiaz@7709602192478457109
+A|TT|r|11-22|1310|161|9|4|team_amilcardiaz@7711057367865117973
+A|TT|r|11-15|16000|426|26|16|abg_edinson_guevara@7708461758691675412
+A|TT|r|11-16|11700|550|26|58|team_amilcardiaz@7708672706324991253
+A|TT|r|11-15|6468|199|38|12|amazonas.com.18@7708191196853669141
+A|TT|r|09-07|9079|212|15|33|team_amilcardiaz@7682828181883178258
+A|TT|r|08-03|12600|287|15|18|maritaherrera.amazonas@7669650736157953301
+A|TT|r|07-18|631|35|1|0|amilcarlovers@7663995907167489301
+A|TT|r|07-19|3372|178|4|4|team_amilcardiaz@7664132733127429383
+C|TT|r|11-21|4073|168|11|49|jovenesconelarbolito@7710656871157239060
+C|TT|r|11-17|1749|104|5|20|sumatealcambio6@7708945037270240564
+C|TT|r|11-17|3151|116|0|14|sumatealcambio6@7708977644058021127
+C|TT|r|11-16|5166|192|9|35|sumatealcambio6@7708870592211979528
+C|TT|r|11-15|7532|296|11|47|sumatealcambio6@7708547258911902977
+C|TT|r|11-17|484|45|4|18|jovenesconelarbolito@7708958745417501973
+C|TT|r|11-18|933|66|3|19|jovenesconelarbolito@7709564933658168596
+C|TT|r|11-16|8540|254|19|55|jovenesconelarbolito@7708765563627048213
+C|TT|r|11-15|11200|406|28|90|jovenesconelarbolito@7708522371669445908
+C|TT|r|11-14|3413|242|8|18|jovenesconelarbolito@7708087449225940230
+C|TT|r|11-14|11600|268|13|27|jovenesconelarbolito@7708058364785364244
+C|TT|r|11-12|778|18|0|1|edwar.frias.torre@7707076260161195284
+C|TT|r|11-12|17600|353|35|58|jorge.o.contreras@7707301502905240850
+C|TT|r|11-13|9388|324|18|22|jovenesconelarbolito@7707483349312359700
+C|TT|r|11-13|2943|65|0|7|sumatealcambio6@7707454377556102418
+C|TT|r|11-12|18300|699|51|227|jovenesconelarbolito@7707339301159259412
+C|TT|r|11-05|3902|311|12|37|jovenesconelarbolito@7704747859287100693
+C|TT|r|11-05|3616|171|11|21|jovenesconelarbolito@7704787609809161493
+C|TT|r|11-04|8697|293|61|113|jorge.o.contreras@7704305054446013714
+C|TT|r|11-04|1784|102|7|12|jovenesconelarbolito@7704349344660557077
+`;
+
+const FB_FOTOS={
+ P1:"https://www.facebook.com/profile.php?id=61567838240210",
+ P9:"https://www.facebook.com/profile.php?id=61567838240210",
+ P13:"https://www.facebook.com/profile.php?id=61578168690690",
+ P14:"https://www.facebook.com/profile.php?id=61578168690690",
+ P16:"https://www.facebook.com/profile.php?id=61578168690690",
+ P18:"https://www.facebook.com/profile.php?id=61578168690690",
+ P19:"https://www.facebook.com/profile.php?id=61578168690690"
+};
+
+const DB=BASE.trim().split("\n").map(line=>{
+ const [p,n,o,d,v,l,c,s,id]=line.split("|");
+
+ let url;
+
+ if(n==="FB"){
+  url=FB_FOTOS[id] ||
+   "https://www.facebook.com/reel/"+id+"/";
+ }else{
+  const [cuenta,video]=id.split("@");
+  url="https://www.tiktok.com/@"+
+   cuenta+"/video/"+video;
+ }
+
+ return{
+  p,
+  n,
+  o,
+  day:"2026-"+d,
+  views:v===""?null:Number(v),
+  likes:Number(l),
+  comments:Number(c),
+  shares:Number(s),
+  interactions:Number(l)+Number(c)+Number(s),
+  id,
+  url
+ };
+});
+
+const fmt=x=>x===null?"—":
+ new Intl.NumberFormat("es-PE").format(x);
+
+let TAB="FB";
+
+function abrirDatos(tab){
+ TAB=tab;
+
+ for(const t of ["FB","TT","OT","ALL"]){
+  document.getElementById("tab"+t)
+   .classList.toggle("active",tab===t);
+ }
+
+ render();
+}
+
+function abrirSegundo(){
+ document.getElementById("candidate").value="C";
+ abrirDatos("FB");
+}
+
+function filtro(){
+ const person=document.getElementById("candidate").value;
+ const q=document.getElementById("search")
+  .value.toLowerCase();
+
+ return DB.filter(r=>{
+  const personaOK=person==="*"||r.p===person;
+
+  const redOK=
+   TAB==="ALL" ||
+   (TAB==="FB"&&r.n==="FB") ||
+   (TAB==="TT"&&r.n==="TT"&&r.o==="o") ||
+   (TAB==="OT"&&r.n==="TT"&&r.o==="r");
+
+  const textoOK=(
+   r.id+" "+
+   r.day+" "+
+   (r.p==="A"?"Amílcar":"Cariñito")
+  ).toLowerCase().includes(q);
+
+  return personaOK&&redOK&&textoOK;
+ });
+}
+
+function render(){
+ const lista=filtro();
+ const sort=document.getElementById("order").value;
+
+ lista.sort((a,b)=>{
+  if(sort==="date"){
+   return b.day.localeCompare(a.day);
+  }
+
+  return(b[sort]||0)-(a[sort]||0);
+ });
+
+ document.getElementById("count").textContent=
+  lista.length+" de "+DB.length+" publicaciones";
+
+ const tbody=document.getElementById("rows");
+ tbody.replaceChildren();
+
+ for(const r of lista){
+  const tr=document.createElement("tr");
+
+  const contenido=
+   r.n==="FB"?
+    (r.id.startsWith("P")?"Fotografía":"Reel"):
+    "Video @"+r.id.split("@")[0];
+
+  const valores=[
+   r.day,
+   r.p==="A"?"Amílcar":"Segundo",
+   r.n==="FB"?
+    "Facebook":
+    r.o==="o"?"TikTok oficial":"TikTok otras cuentas",
+   contenido,
+   fmt(r.views),
+   fmt(r.likes),
+   fmt(r.comments),
+   fmt(r.shares)
+  ];
+
+  for(const valor of valores){
+   const td=document.createElement("td");
+   td.textContent=valor;
+   tr.appendChild(td);
+  }
+
+  const td=document.createElement("td");
+  const a=document.createElement("a");
+
+  a.href=r.url;
+  a.target="_blank";
+  a.rel="noopener noreferrer";
+  a.textContent="▶ ABRIR";
+
+  td.appendChild(a);
+  tr.appendChild(td);
+  tbody.appendChild(tr);
+ }
+}
+
+function downloadCSV(){
+ const data=[
+  [
+   "Candidato","Plataforma","Origen","Fecha",
+   "Vistas","Me gusta","Comentarios","Compartidos",
+   "Interacciones","URL"
+  ],
+  ...DB.map(r=>[
+   r.p==="A"?"Amílcar":"Segundo",
+   r.n==="FB"?"Facebook":"TikTok",
+   r.o==="o"?"Oficial":"Otras cuentas",
+   r.day,
+   r.views??"",
+   r.likes,
+   r.comments,
+   r.shares,
+   r.interactions,
+   r.url
+  ])
+ ];
+
+ const csv="\uFEFF"+data.map(row=>
+  row.map(v=>
+   '"'+String(v).replaceAll('"','""')+'"'
+  ).join(",")
+ ).join("\r\n");
+
+ const blob=new Blob([csv],{
+  type:"text/csv;charset=utf-8"
+ });
+
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+
+ a.href=url;
+ a.download="datos_85_publicaciones.csv";
+
+ document.body.appendChild(a);
+ a.click();
+ a.remove();
+
+ setTimeout(()=>URL.revokeObjectURL(url),1500);
+}
+
+render();
+</script>
+
+</body>
+</html>
